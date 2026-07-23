@@ -36,6 +36,8 @@ stash_tar_linkname (char *linkname)
 
   strncpy (hold_tar_linkname, linkname, TARLINKNAMESIZE);
   hold_tar_linkname[TARLINKNAMESIZE] = '\0';
+  cpio_safer_name_suffix (hold_tar_linkname, true, !no_abs_paths_flag,
+  			  false);
   return hold_tar_linkname;
 }
 
